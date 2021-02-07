@@ -1,18 +1,27 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <el-row>
+      <el-col :span="10">
+        <el-input placeholder="请输入课程" v-model="projectname"></el-input>
+      </el-col>
+      <el-col :span="2">
+        <el-button type="primary"> 新增</el-button>
+      </el-col>
+
+    </el-row>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import { defineComponent, ref } from 'vue'
 
-export default {
+export default defineComponent({
   name: 'Home',
-  components: {
-    HelloWorld
+  setup () {
+    const projectname = ref('')
+    return {
+      projectname
+    }
   }
-}
+})
 </script>
